@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 public class GenerateLabseqUseCase {
 
     @Autowired
-    @Qualifier("inMemoryCacheControl")
+    @Qualifier("caffeineCacheControl")
     private CacheControlPort cacheControl;
 
     public Integer run(Integer n) {
 
-        if (cacheControl.existKey(n)) return cacheControl.getDataByKey(n);
+        if (cacheControl.getDataByKey(n) != null) return cacheControl.getDataByKey(n);
 
         Integer result = Math.abs(switch (n) {
             case 0, 2 -> 0;

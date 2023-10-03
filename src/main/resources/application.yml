@@ -1,5 +1,8 @@
 spring:
-  data:
-    redis:
-      port: ${REDIS_PORT:6379}
-      client-name: ${REDIS_CLIENT_NAME:redis}
+  cache:
+    cache-names:
+      - ${CAFFEINE_CACHE_NAME:labseq}
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=1h
+server:
+  port: ${SERVER_PORT:8080}
