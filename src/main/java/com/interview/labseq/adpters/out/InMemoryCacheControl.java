@@ -3,20 +3,28 @@ package com.interview.labseq.adpters.out;
 import com.interview.labseq.domain.port.CacheControlPort;
 import org.springframework.stereotype.Repository;
 
-@Repository("redisCacheControl")
-public class RedisCacheControl implements CacheControlPort {
+import java.util.HashMap;
+import java.util.Map;
+
+@Repository("inMemoryCacheControl")
+public class InMemoryCacheControl implements CacheControlPort {
+
+    private final Map<Integer, Integer> memoryCache = new HashMap<Integer, Integer>();
+
     @Override
     public Boolean existKey(Integer key) {
-        return Boolean.FALSE;
+        return memoryCache.containsKey(key);
     }
 
     @Override
     public Integer getDataByKey(Integer key) {
-        return 50;
+        return memoryCache.get(key);
     }
 
     @Override
     public void addCacheData(Integer key, Integer data) {
+
+        memoryCache.put(key, data);
 
     }
 }

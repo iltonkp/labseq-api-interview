@@ -1,7 +1,9 @@
 package com.interview.labseq.domain.port;
 
 public interface CacheControlPort {
-   String getDataByKey(int key);
-   void addCacheData(int key, int data);
+
+   Boolean existKey(Integer key);
+   Integer getDataByKey(Integer key);
+   void addCacheData(Integer key, Integer data);
 
 }

@@ -16,7 +16,8 @@ public class LabseqController {
     private GenerateLabseqUseCase useCase;
 
     @GetMapping
-    public int getLabseq(@PathVariable("n") int n){
+    public long getLabseq(@PathVariable("n") int n){
+
         return useCase.run(n);
     }
 }
