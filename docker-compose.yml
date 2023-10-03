@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:7.0-alpine
+    hostname: redis
+    ports:
+      - "6379:6379"
+
+  labseq-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVER_PORT=8080
+      - REDIS_PORT=6379
+      - REDIS_CLIENT_NAME=redis
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    command: >
+      bash -c "java -jar /app/target/labseq-0.0.1.jar"
