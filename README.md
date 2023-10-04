@@ -39,7 +39,7 @@ docker-compose up labseq-api
 ## Access the api
 
 To access the api you can use a browser or any tools to make request HTTP like Postman, Insomnia or similar. Use this
-<a hrf="http://localhost:8080/labseq/{n}">url</a> in your request. Bellow stay shared the example to request using curl:
+[url](http://localhost:8080/labseq/{n}) in your request. Bellow stay shared the example to request using curl:
 
 ```sh
 curl -X 'GET' 'http://localhost:8080/labseq/10000' -H 'accept:application/json'
