@@ -1,19 +1,20 @@
 package com.interview.labseq.adpters.out;
 
+import com.interview.labseq.configurations.CaffeineConstants;
 import com.interview.labseq.domain.port.CacheControlPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Repository;
 
-@Repository("caffeineCacheControl")
+@Repository
 public class CaffeineCacheControl implements CacheControlPort {
 
     @Autowired
     private CacheManager cacheManager;
 
     private Cache getCafeiineCache() {
-        return cacheManager.getCache("labseq_cache_manager");
+        return cacheManager.getCache(CaffeineConstants.CACHE_NAME);
     }
 
     @Override

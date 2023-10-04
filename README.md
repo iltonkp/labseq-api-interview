@@ -42,14 +42,14 @@ To access the api you can use a browser or any tools to make request HTTP like P
 <a hrf="http://localhost:8080/labseq/{n}">url</a> in your request. Bellow stay shared the example to request using curl:
 
 ```sh
-curl -s "http://localhost:8080/labseq/10000"
+curl -X 'GET' 'http://localhost:8080/labseq/10000' -H 'accept:application/json'
 ```
 
 If you prefer use postman, you can use the collection shared on */docs/labseq-postman-collection.json*
 
 ## Docs
 
-Please read the Open api documentation available on */docs/labseq-postman-collection.json* to understand better about 
+Please read the Open api documentation available on */docs/labseq-openapi-docs.yml* to understand better about 
 parameters for this request. 
 
 ## Note 

@@ -1,0 +1,100 @@
+openapi: 3.0.1
+
+info:
+  title: Labseq Interview API
+  version: 0.0.1
+
+servers:
+  - url: "{scheme}://{host}:{port}"
+    description: Altice Labs interview project
+    variables:
+      scheme:
+        default: http
+        enum:
+          - http
+      host:
+        default: localhost
+        enum:
+          - localhost
+      port:
+        default: "8080"
+        enum:
+          - "8080"
+
+paths:
+  /labseq/{n}:
+    get:
+      operationId: "calculateLabseqforinteger"
+      tags:
+        - Labseq Interview API
+      description: Altice Labs interview endpoint to calculate labseq sequence for a integer
+      parameters:
+        - name: n
+          in: path
+          description: "Number to caulculate labseq sequence."
+          required: true
+          schema:
+            type: integer
+            example: 10000
+      responses:
+        "200":
+          description: Labseq sequence for the request number.
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 1648322643
+
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorPayload'
+              example:
+                timestamp: "2023-10-04T14:33:23.362+00:00"
+                status: 404
+                error: "Not Found"
+                trace: "Resource not found"
+                message: "message"
+                path: "/labseq/100000"
+
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorPayload'
+              example:
+                example:
+                timestamp: "2023-10-04T14:33:23.362+00:00"
+                status: 500
+                error: "Internal Server Error"
+                trace: "java.lang.StackOverflowError"
+                message: "message"
+                path: "/labseq/100000"
+components:
+  schemas:
+    ErrorPayload:
+      type: object
+      description: "Error payload."
+      required:
+        - timestamp
+        - status
+        - error
+        - trace
+        - message
+        - path
+      properties:
+        timestamp:
+          type: string
+        status:
+          type: integer
+        error:
+          type: string
+        trace:
+          type: string
+        message:
+          type: string
+        path:
+          type: string
