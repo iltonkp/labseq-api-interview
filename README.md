@@ -2,17 +2,17 @@
 
 ## Technology
 
-- <a hrf="https://www.java.com/en/download/help/whatis_java.html">Java 17</a>
-- <a hrf="https://spring.io/projects/spring-boot">Spring-boot 3.0.1</a>
-- <a hrf="https://maven.apache.org/">Maven</a>
-- <a hrf="https://www.baeldung.com/java-caching-caffeine">Caffeine</a>
-- <a hrf="https://docs.docker.com/get-started/overview/">Docker</a>
+- [Java 17](https://www.java.com/en/download/help/whatis_java.html)
+- [Spring-boot 3.0.1](https://spring.io/projects/spring-boot)
+- [Maven](https://maven.apache.org/)
+- [Caffeine](https://www.baeldung.com/java-caching-caffeine)
+- [Docker](https://docs.docker.com/get-started/overview/)
 
 ## Pre-requirements
 
-- <a hrf="https://www.java.com/en/download/help/whatis_java.html">Java 17</a>
-- <a hrf="https://maven.apache.org/">Maven</a>
-- <a hrf="https://docs.docker.com/get-started/overview/">Docker</a>
+- [Java 17](https://www.java.com/en/download/help/whatis_java.html)
+- [Maven](https://maven.apache.org/)
+- [Docker](https://docs.docker.com/get-started/overview/)
 
 ## How to use
 
